@@ -7,7 +7,7 @@ console.log(version)
 </script>
 
 <template>
-  <div>
+  <div class="bg-#aaa">
     <a href="https://vite.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>
