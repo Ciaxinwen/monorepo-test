@@ -8,15 +8,15 @@ export function setupPlugin() {
   const plugins: PluginOption[] = [
     vue(),
     AutoImport({
-      resolvers: [AntDesignVueResolver()]
+      resolvers: [AntDesignVueResolver()],
     }),
     Components({
       resolvers: [
         AntDesignVueResolver({
-          importStyle: 'css-in-js'
-        })
-      ]
-    })
+          importStyle: 'css-in-js',
+        }),
+      ],
+    }),
   ]
 
   return plugins

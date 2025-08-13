@@ -15,6 +15,7 @@ console.log(version)
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
+
   <HelloWorld msg="我政务端" />
   <h1>
     {{ getCurrentDate() }}
