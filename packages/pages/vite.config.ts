@@ -4,7 +4,7 @@ import { resolve } from 'path'
 
 export default defineConfig(() => {
   return {
-    base: '/gov',
+    base: '/',
     plugins: setupPlugin(),
     resolve: {
       alias: {

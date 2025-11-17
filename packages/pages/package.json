@@ -1,5 +1,5 @@
 {
-  "name": "@monorepo-test/gov",
+  "name": "@monorepo-test/pages",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,7 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@monorepo-test/axios": "workspace:*",
     "@monorepo-test/components": "workspace:*",
-    "@monorepo-test/utils": "workspace:*"
+    "@monorepo-test/utils": "workspace:*",
+    "pinia": "^3.0.4"
+  },
+  "devDependencies": {
+    "vue-router": "^4.6.3"
   }
 }
