@@ -25,7 +25,7 @@ const pinia = createPinia()
 export default {
   install(app: App) {
     app.use(pinia)
-  }
+  },
 }
 ```
 

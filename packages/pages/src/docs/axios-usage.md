@@ -115,7 +115,7 @@ export const useUserStore = defineStore('user', () => {
   return {
     users,
     loading,
-    fetchUsers
+    fetchUsers,
   }
 })
 ```
@@ -128,7 +128,7 @@ const login = async () => {
   try {
     const response = await api.auth.login({
       username: 'admin',
-      password: '123456'
+      password: '123456',
     })
     localStorage.setItem('token', response.data.token)
   } catch (error) {
@@ -142,7 +142,7 @@ const getArticles = async () => {
     const response = await api.article.getArticles({
       page: 1,
       pageSize: 10,
-      status: 'published'
+      status: 'published',
     })
     return response.data
   } catch (error) {
@@ -164,12 +164,14 @@ const uploadFile = async (file: File) => {
 ## 架构说明
 
 ### axios子包职责
+
 - **专注于axios封装**：提供基础的HTTP请求封装
 - **通用类型定义**：包含通用的API响应、分页等类型
 - **拦截器配置**：请求/响应拦截器、错误处理等核心功能
 - **可复用性**：可以在多个应用中独立使用
 
 ### pages子包职责
+
 - **API服务层**：基于axios封装业务相关的API调用
 - **业务类型定义**：用户、文章、统计等业务相关类型
 - **具体业务逻辑**：认证、用户管理、文章管理等具体API调用
@@ -201,6 +203,7 @@ import type { User, Article, LoginRequest } from '../types'
 ## 环境变量配置
 
 ### 开发环境 (.env.development)
+
 ```bash
 VITE_API_BASE_URL=http://localhost:3000/api
 VITE_APP_TITLE=Monorepo Test
@@ -208,6 +211,7 @@ VITE_APP_DESCRIPTION=基于Vite + Vue3 + TypeScript的后台管理系统
 ```
 
 ### 生产环境 (.env.production)
+
 ```bash
 VITE_API_BASE_URL=https://your-api-domain.com/api
 VITE_APP_TITLE=Monorepo Test
@@ -217,6 +221,7 @@ VITE_APP_DESCRIPTION=基于Vite + Vue3 + TypeScript的后台管理系统
 ## API 方法说明
 
 ### 基础请求方法
+
 - `get<T>(url, params?)`: GET 请求
 - `post<T>(url, data?)`: POST 请求
 - `put<T>(url, data?)`: PUT 请求
@@ -225,12 +230,14 @@ VITE_APP_DESCRIPTION=基于Vite + Vue3 + TypeScript的后台管理系统
 ### 业务 API 模块
 
 #### 认证 API (`api.auth`)
+
 - `login(data)`: 用户登录
 - `logout()`: 用户登出
 - `getCurrentUser()`: 获取当前用户信息
 - `refreshToken()`: 刷新 token
 
 #### 用户 API (`api.user`)
+
 - `getUsers(params?)`: 获取用户列表
 - `getUser(id)`: 获取用户详情
 - `createUser(data)`: 创建用户
@@ -239,6 +246,7 @@ VITE_APP_DESCRIPTION=基于Vite + Vue3 + TypeScript的后台管理系统
 - `updateUserStatus(id, status)`: 更新用户状态
 
 #### 文章 API (`api.article`)
+
 - `getArticles(params?)`: 获取文章列表
 - `getArticle(id)`: 获取文章详情
 - `createArticle(data)`: 创建文章
@@ -248,15 +256,18 @@ VITE_APP_DESCRIPTION=基于Vite + Vue3 + TypeScript的后台管理系统
 - `unpublishArticle(id)`: 撤回文章
 
 #### 统计分析 API (`api.statistics`)
+
 - `getDashboardStats()`: 获取仪表盘统计
 - `getVisitStats(params?)`: 获取访问统计
 - `getUserGrowthStats(params?)`: 获取用户增长统计
 
 #### 系统配置 API (`api.config`)
+
 - `getConfig()`: 获取系统配置
 - `updateConfig(data)`: 更新系统配置
 
 #### 文件上传 API (`api.upload`)
+
 - `uploadFile(file)`: 上传单个文件
 - `uploadFiles(files)`: 上传多个文件
 
@@ -289,6 +300,7 @@ axios 已经内置了完善的错误处理机制：
 ## 使用示例参考
 
 完整的代码示例请查看：
+
 - `src/examples/api-usage.ts` - API使用示例代码
 
 ## 注意事项
