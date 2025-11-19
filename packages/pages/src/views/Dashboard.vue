@@ -53,8 +53,10 @@
           v-for="activity in recentActivities"
           :key="activity.id"
           :color="activity.color"
-          :dot="activity.icon"
         >
+          <template #dot>
+            <component :is="activity.icon" class="text-xl" />
+          </template>
           <div class="flex justify-between items-start">
             <div>
               <div class="font-medium">{{ activity.title }}</div>
@@ -85,30 +87,31 @@ import {
   DeleteOutlined,
 } from '@ant-design/icons-vue'
 import Counter from '@/components/Counter.vue'
+import { h } from 'vue'
 
 const statistics = [
   {
     title: '用户总数',
     value: '1,234',
-    icon: TeamOutlined,
+    icon: () => h(TeamOutlined),
     colorClass: 'bg-blue-50 border-blue-200',
   },
   {
     title: '今日访问',
     value: '567',
-    icon: EyeOutlined,
+    icon: () => h(EyeOutlined),
     colorClass: 'bg-green-50 border-green-200',
   },
   {
     title: '本月收入',
     value: '¥89,000',
-    icon: DollarOutlined,
+    icon: () => h(DollarOutlined),
     colorClass: 'bg-yellow-50 border-yellow-200',
   },
   {
     title: '增长率',
     value: '+12.5%',
-    icon: RiseOutlined,
+    icon: () => h(RiseOutlined),
     colorClass: 'bg-purple-50 border-purple-200',
   },
 ]

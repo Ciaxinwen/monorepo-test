@@ -12,6 +12,7 @@ import {
   DatabaseOutlined,
   CloudOutlined,
 } from '@ant-design/icons-vue'
+import { h } from 'vue'
 
 export interface MenuItem {
   key: string
@@ -24,30 +25,30 @@ export interface MenuItem {
 export const menuData: MenuItem[] = [
   {
     key: 'dashboard',
-    icon: DashboardOutlined,
+    icon: () => h(DashboardOutlined),
     label: '仪表盘',
     path: '/home',
   },
   {
     key: 'user-management',
-    icon: TeamOutlined,
+    icon: () => h(TeamOutlined),
     label: '用户管理',
     children: [
       {
         key: 'user-list',
-        icon: UserOutlined,
+        icon: () => h(UserOutlined),
         label: '用户列表',
         path: '/home/users',
       },
       {
         key: 'user-roles',
-        icon: SecurityScanOutlined,
+        icon: () => h(SecurityScanOutlined),
         label: '角色管理',
         path: '/home/roles',
       },
       {
         key: 'user-permissions',
-        icon: SecurityScanOutlined,
+        icon: () => h(SecurityScanOutlined),
         label: '权限管理',
         path: '/home/permissions',
       },
@@ -55,18 +56,18 @@ export const menuData: MenuItem[] = [
   },
   {
     key: 'content',
-    icon: FileTextOutlined,
+    icon: () => h(FileTextOutlined),
     label: '内容管理',
     children: [
       {
         key: 'articles',
-        icon: FileTextOutlined,
+        icon: () => h(FileTextOutlined),
         label: '文章管理',
         path: '/home/articles',
       },
       {
         key: 'categories',
-        icon: FileTextOutlined,
+        icon: () => h(FileTextOutlined),
         label: '分类管理',
         path: '/home/categories',
       },
@@ -74,24 +75,24 @@ export const menuData: MenuItem[] = [
   },
   {
     key: 'analytics',
-    icon: BarChartOutlined,
+    icon: () => h(BarChartOutlined),
     label: '数据统计',
     children: [
       {
         key: 'traffic',
-        icon: BarChartOutlined,
+        icon: () => h(BarChartOutlined),
         label: '访问统计',
         path: '/home/traffic',
       },
       {
         key: 'performance',
-        icon: BarChartOutlined,
+        icon: () => h(BarChartOutlined),
         label: '性能监控',
         path: '/home/performance',
       },
       {
         key: 'revenue',
-        icon: ShoppingCartOutlined,
+        icon: () => h(ShoppingCartOutlined),
         label: '收入统计',
         path: '/home/revenue',
       },
@@ -99,24 +100,24 @@ export const menuData: MenuItem[] = [
   },
   {
     key: 'system',
-    icon: SettingOutlined,
+    icon: () => h(SettingOutlined),
     label: '系统设置',
     children: [
       {
         key: 'general',
-        icon: SettingOutlined,
+        icon: () => h(SettingOutlined),
         label: '基本设置',
         path: '/home/settings',
       },
       {
         key: 'database',
-        icon: DatabaseOutlined,
+        icon: () => h(DatabaseOutlined),
         label: '数据库',
         path: '/home/database',
       },
       {
         key: 'logs',
-        icon: FileTextOutlined,
+        icon: () => h(FileTextOutlined),
         label: '系统日志',
         path: '/home/logs',
       },
@@ -124,18 +125,18 @@ export const menuData: MenuItem[] = [
   },
   {
     key: 'tools',
-    icon: ToolOutlined,
+    icon: () => h(ToolOutlined),
     label: '工具',
     children: [
       {
         key: 'backup',
-        icon: CloudOutlined,
+        icon: () => h(CloudOutlined),
         label: '备份管理',
         path: '/home/backup',
       },
       {
         key: 'maintenance',
-        icon: ToolOutlined,
+        icon: () => h(ToolOutlined),
         label: '系统维护',
         path: '/home/maintenance',
       },
@@ -143,7 +144,7 @@ export const menuData: MenuItem[] = [
   },
   {
     key: 'notifications',
-    icon: BellOutlined,
+    icon: () => h(BellOutlined),
     label: '消息通知',
     path: '/home/notifications',
   },
