@@ -1,7 +1,7 @@
 <template>
-  <div class="counter-container">
-    <h2>Pinia Counter 示例</h2>
-    <div class="counter-display">
+  <div class="counter-container theme-bg-elevated theme-border">
+    <h2 class="theme-text">Pinia Counter 示例</h2>
+    <div class="counter-display theme-text">
       <p>计数: {{ counter.count }}</p>
       <p>双倍计数: {{ counter.doubleCount }}</p>
     </div>
@@ -21,7 +21,6 @@ const counter = useCounterStore()
 <style scoped>
 .counter-container {
   padding: 20px;
-  border: 1px solid #e8e8e8;
   border-radius: 8px;
   margin: 20px 0;
 }

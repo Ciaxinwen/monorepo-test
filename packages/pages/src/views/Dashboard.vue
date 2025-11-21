@@ -2,8 +2,8 @@
   <div class="dashboard">
     <!-- 页面标题 -->
     <div class="mb-8">
-      <h1 class="text-3xl font-bold text-gray-800 mb-2">仪表盘</h1>
-      <p class="text-gray-600">欢迎回到管理系统</p>
+      <h1 class="text-3xl font-bold theme-text mb-2">仪表盘</h1>
+      <p class="theme-text">欢迎回到管理系统</p>
     </div>
 
     <!-- 数据统计面板 -->
@@ -11,7 +11,7 @@
       <a-card
         v-for="stat in statistics"
         :key="stat.title"
-        class="text-center shadow-md hover:shadow-lg transition-shadow"
+        class="text-center shadow-md hover:shadow-lg transition-shadow theme-bg-elevated theme-border theme-text"
         :class="stat.colorClass"
       >
         <div class="flex items-center justify-center gap-3">
@@ -26,13 +26,13 @@
 
     <!-- 快速操作 -->
     <div class="mb-8">
-      <a-card title="快速操作" class="shadow-lg">
+      <a-card title="快速操作" class="shadow-lg theme-bg-elevated theme-border theme-text">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <a-button
             v-for="action in quickActions"
             :key="action.title"
             type="default"
-            class="h-20 flex flex-col items-center justify-center"
+            class="h-20 flex flex-col items-center justify-center theme-bg theme-text"
             @click="handleActionClick(action.action)"
           >
             <component :is="action.icon" class="text-xl mb-1" />
@@ -43,7 +43,7 @@
     </div>
 
     <!-- 最近活动 -->
-    <a-card title="最近活动" class="shadow-lg">
+    <a-card title="最近活动" class="shadow-lg theme-bg-elevated theme-border theme-text">
       <template #extra>
         <a-button type="link" @click="viewAllActivities">查看全部</a-button>
       </template>
@@ -53,6 +53,7 @@
           v-for="activity in recentActivities"
           :key="activity.id"
           :color="activity.color"
+          class="theme-text"
         >
           <template #dot>
             <component :is="activity.icon" class="text-xl" />
@@ -60,9 +61,9 @@
           <div class="flex justify-between items-start">
             <div>
               <div class="font-medium">{{ activity.title }}</div>
-              <div class="text-sm text-gray-500">{{ activity.description }}</div>
+              <div class="text-sm theme-text">{{ activity.description }}</div>
             </div>
-            <div class="text-sm text-gray-400">{{ activity.time }}</div>
+            <div class="text-sm theme-text">{{ activity.time }}</div>
           </div>
         </a-timeline-item>
       </a-timeline>
@@ -94,25 +95,25 @@ const statistics = [
     title: '用户总数',
     value: '1,234',
     icon: () => h(TeamOutlined),
-    colorClass: 'bg-blue-50 border-blue-200',
+    colorClass: 'dark:bg-blue-900/30 bg-blue-50 dark:border-blue-800/50 border-blue-200',
   },
   {
     title: '今日访问',
     value: '567',
     icon: () => h(EyeOutlined),
-    colorClass: 'bg-green-50 border-green-200',
+    colorClass: 'dark:bg-green-900/30 bg-green-50 dark:border-green-800/50 border-green-200',
   },
   {
     title: '本月收入',
     value: '¥89,000',
     icon: () => h(DollarOutlined),
-    colorClass: 'bg-yellow-50 border-yellow-200',
+    colorClass: 'dark:bg-yellow-900/30 bg-yellow-50 dark:border-yellow-800/50 border-yellow-200',
   },
   {
     title: '增长率',
     value: '+12.5%',
     icon: () => h(RiseOutlined),
-    colorClass: 'bg-purple-50 border-purple-200',
+    colorClass: 'dark:bg-purple-900/30 bg-purple-50 dark:border-purple-800/50 border-purple-200',
   },
 ]
 
