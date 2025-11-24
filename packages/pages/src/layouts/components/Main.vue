@@ -1,8 +1,6 @@
 <template>
   <a-layout-content class="p-6 pt-20 theme-bg" :class="collapsed ? 'ml-20' : 'ml-60'">
-    <div class="max-w-7xl mx-auto">
-      <router-view />
-    </div>
+    <router-view />
   </a-layout-content>
 </template>
 

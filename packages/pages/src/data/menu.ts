@@ -11,6 +11,7 @@ import {
   SecurityScanOutlined,
   DatabaseOutlined,
   CloudOutlined,
+  AppstoreOutlined,
 } from '@ant-design/icons-vue'
 import { h } from 'vue'
 
@@ -147,6 +148,12 @@ export const menuData: MenuItem[] = [
     icon: () => h(BellOutlined),
     label: '消息通知',
     path: '/home/notifications',
+  },
+  {
+    key: 'svg-icon-example',
+    icon: () => h(AppstoreOutlined),
+    label: 'SVG图标示例',
+    path: '/home/svg-icon-example',
   },
 ]
 

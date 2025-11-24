@@ -33,14 +33,22 @@ const routes = [
           title: '仪表盘',
         },
       },
+      {
+        path: 'svg-icon-example',
+        name: 'SvgIconExample',
+        component: () => import('@/views/SvgIconExample.vue'),
+        meta: {
+          title: 'SVG图标示例',
+        },
+      },
     ],
   },
   {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
-    redirect: '/login',
+    component: () => import('@/views/NotFound.vue'),
     meta: {
-      title: '页面未找到',
+      title: '页面不存在',
     },
   },
 ]
