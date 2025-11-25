@@ -12,10 +12,7 @@
 </template>
 
 <script setup lang="ts">
-// 导入SvgIconDemo组件
 import SvgIconDemo from '@/components/SvgIconDemo.vue'
 </script>
 
-<style scoped>
-/* 使用UnoCSS，无需传统CSS */
-</style>
+<style lang="scss" scoped></style>

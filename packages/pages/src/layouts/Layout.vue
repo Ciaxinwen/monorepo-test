@@ -10,7 +10,7 @@
       v-model:collapsed="collapsed"
     />
     <Main :collapsed="collapsed" />
-    <Footer :collapsed="collapsed" />
+    <!-- <Footer :collapsed="collapsed" /> -->
   </div>
 </template>
 
@@ -21,7 +21,6 @@ import { findMenuItem } from '@/data/menu'
 import Sider from './components/Sider.vue'
 import Header from './components/Header.vue'
 import Main from './components/Main.vue'
-import Footer from './components/Footer.vue'
 
 const route = useRoute()
 
@@ -41,7 +40,3 @@ const currentPageTitle = computed(() => {
   return menuItem ? menuItem.label : '未知页面'
 })
 </script>
-
-<style lang="scss" scoped>
-/* 主要布局样式已移至各组件 */
-</style>

@@ -4,9 +4,7 @@ import router from './router'
 import pinia from './plugins/pinia'
 import 'virtual:uno.css'
 import '@unocss/reset/normalize.css'
-import './style/global.css'
-
-import { message } from 'ant-design-vue'
+import './style/global.scss'
 
 // 导入组件库
 import components from '@monorepo-test/components'
@@ -22,10 +20,3 @@ app.use(components)
 
 // 挂载应用
 app.mount('#app')
-
-// 全局配置 message
-message.config({
-  top: '50px',
-  duration: 3,
-  maxCount: 3,
-})

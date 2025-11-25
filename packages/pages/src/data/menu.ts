@@ -155,6 +155,12 @@ export const menuData: MenuItem[] = [
     label: 'SVG图标示例',
     path: '/home/svg-icon-example',
   },
+  {
+    key: 'table-example',
+    icon: () => h(AppstoreOutlined),
+    label: '表格示例',
+    path: '/home/table-example',
+  },
 ]
 
 // 扁平化菜单数据，用于高亮当前菜单项

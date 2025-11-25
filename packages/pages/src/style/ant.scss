@@ -1,0 +1,20 @@
+.ant-table-wrapper {
+  .ant-table-pagination.ant-pagination {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #fff;
+    padding: unset;
+    padding-top: 12px;
+    padding-right: 12px;
+    margin: unset;
+  }
+}
+.dark {
+  .ant-table-wrapper {
+    .ant-table-pagination.ant-pagination {
+      background-color: #141414;
+    }
+  }
+}

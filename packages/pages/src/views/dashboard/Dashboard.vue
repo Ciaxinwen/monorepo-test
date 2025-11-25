@@ -185,8 +185,4 @@ const viewAllActivities = () => {
 }
 </script>
 
-<style scoped>
-.dashboard {
-  /* 页面特定样式 */
-}
-</style>
+<style scoped></style>

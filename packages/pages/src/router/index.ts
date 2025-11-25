@@ -28,7 +28,7 @@ const routes = [
       {
         path: '',
         name: 'Dashboard',
-        component: () => import('@/views/Dashboard.vue'),
+        component: () => import('@/views/dashboard/Dashboard.vue'),
         meta: {
           title: '仪表盘',
         },
@@ -36,9 +36,17 @@ const routes = [
       {
         path: 'svg-icon-example',
         name: 'SvgIconExample',
-        component: () => import('@/views/SvgIconExample.vue'),
+        component: () => import('@/views/SvgIcon/SvgIconExample.vue'),
         meta: {
           title: 'SVG图标示例',
+        },
+      },
+      {
+        path: 'table-example',
+        name: 'TableExample',
+        component: () => import('@/views/Table/TableExample.vue'),
+        meta: {
+          title: '表格示例',
         },
       },
     ],
@@ -46,7 +54,7 @@ const routes = [
   {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
-    component: () => import('@/views/NotFound.vue'),
+    component: () => import('@/views/error/NotFound.vue'),
     meta: {
       title: '页面不存在',
     },

@@ -1,7 +1,7 @@
 <template>
   <a-layout-header
-    class="theme-bg shadow-sm px-4 fixed top-0 z-10 h-16"
-    :class="collapsed ? 'left-20 right-0' : 'left-60 right-0'"
+    class="theme-bg shadow-sm px-4 fixed top-0 z-10 h-12"
+    :class="collapsed ? 'left-13 right-0' : 'left-50 right-0'"
   >
     <div class="flex items-center justify-between h-full">
       <div class="flex items-center space-x-4">

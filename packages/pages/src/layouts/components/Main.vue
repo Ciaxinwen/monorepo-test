@@ -1,5 +1,8 @@
 <template>
-  <a-layout-content class="p-6 pt-20 theme-bg" :class="collapsed ? 'ml-20' : 'ml-60'">
+  <a-layout-content
+    class="p-4 pt-16 bg-[#f5f5f5] .dark:bg-[#1f1f1f] overflow-auto"
+    :class="collapsed ? 'ml-13' : 'ml-50'"
+  >
     <router-view />
   </a-layout-content>
 </template>
@@ -12,9 +15,8 @@ defineProps<{
 </script>
 
 <style lang="scss" scoped>
-/* 主体内容区域样式 */
 .ant-layout-content {
-  min-height: calc(100vh - 80px); /* 考虑顶部和底部的高度 */
+  height: 100vh;
 }
 
 /* 响应式设计 - 移动端适配 */

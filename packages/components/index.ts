@@ -1,12 +1,12 @@
 import type { App } from 'vue'
-import { default as Button } from './Button/Index.vue'
 import SvgIcon from './SvgIcon/SvgIcon.vue'
+import Table from './Table/Table.vue'
 import { SvgIconPlugin } from './SvgIcon/SvgIconPlugin'
 
 // 所有组件的列表
 const components = {
-  Button,
   SvgIcon,
+  Table,
 }
 
 // 安装函数，用于全局注册所有组件
@@ -23,12 +23,12 @@ export const install = (app: App) => {
 }
 
 // 导出插件和单独组件
-export { Button, SvgIcon, SvgIconPlugin }
+export { SvgIcon, Table, SvgIconPlugin }
 
 // 默认导出
 export default {
   install,
-  Button,
   SvgIcon,
+  Table,
   SvgIconPlugin,
 }

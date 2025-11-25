@@ -1,5 +1,3 @@
-import type { App } from 'vue'
-import SvgIcon from './SvgIcon.vue'
 import { loadSvgSprite } from './loadSvgSprite'
 
 /**
@@ -14,10 +12,7 @@ export interface SvgIconPluginOptions {
  * SvgIcon插件
  */
 export const SvgIconPlugin = {
-  install: (app: App, options: SvgIconPluginOptions = {}) => {
-    // 注册SvgIcon组件
-    app.component('SvgIcon', SvgIcon)
-
+  install: (_app: any, options: SvgIconPluginOptions = {}) => {
     // 如果提供了svgSpriteUrl，则加载SVG sprite
     if (options.svgSpriteUrl) {
       loadSvgSprite(options.svgSpriteUrl).catch((error) => {
